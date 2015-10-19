@@ -1,0 +1,6 @@
+<div class="modal-base {{ modalClass }} {{ modalService.getModal(modalId).visible ? 'on' : 'off' }}" id="{{modalId}}">
+	<div class="modal-content" ng-transclude>
+	</div>
+	<div class="modal-overlay" ng-click="modalService.hideModal(modalId)">
+	</div>
+</div>

@@ -1,0 +1,76 @@
+
+.modal-base.off .modal-content {
+    -webkit-transform: translateY(-8%);
+    -moz-transform: translateY(-8%);
+    -ms-transform: translateY(-8%);
+    transform: translateY(-8%);
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-base.on .modal-content {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    opacity: 1;
+}
+
+.modal-base .modal-overlay {
+    width: -moz-calc(100vw);
+    width: -webkit-calc(100vw);
+    width: calc(100vw);
+    height: -moz-calc(100vh);
+    height: -webkit-calc(100vh);
+    height: calc(100vh);
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left:0px;
+    right:0px;
+}
+
+.modal-content {
+    position: fixed;
+    top: 40px;
+    min-height: 60px;
+    width: 800px;
+    overflow: hidden;
+    background: #fff;
+    margin: 0 auto;
+    left:0;
+    right:0;
+    z-index: 3;
+}
+
+.modal-base{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: -moz-calc(100vh);
+    height: -webkit-calc(100vh);
+    height: calc(100vh);
+    z-index: 2;
+}
+
+.modal-base.off {
+    -webkit-transition: opacity 0.3s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-base.on {
+    -webkit-transition: opacity 0.3s;
+    opacity:  1;
+}
+
+body.modal-open > *:not(.modal-base) {
+    transition: all 0.3s;
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(7px);
+    filter: blur(7px);
+
+}
