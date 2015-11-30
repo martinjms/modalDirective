@@ -7,6 +7,7 @@ angular.module('modal', [])
         scope: {
             'modalId': '@',
             'modalClass': '@',
+            'config': '='
         },
         controller: function($scope, $element, $timeout){
             $scope.modalService = modalService;
@@ -15,7 +16,7 @@ angular.module('modal', [])
 
 
         },
-        templateUrl: 'modal/modal.tmpl.html'
+        templateUrl: 'client/lib/modalDirective/modal.tmpl.html'
         // template: '<div ng-class="modal-overlay { \'on\': showModal, \'off\' : !showModal }" id="{{ }}"><div id="{{modalId}}" class="modal modal-off" ng-transclude></div><div class="modal-overlay" ng-click="hideModal()"></div></div>'
 
     };
