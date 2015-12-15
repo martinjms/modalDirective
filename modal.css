@@ -1,5 +1,5 @@
 
-.modal-base.off .modal-content {
+.modal-base.off > .modal-content {
     -webkit-transform: translateY(-8%);
     -moz-transform: translateY(-8%);
     -ms-transform: translateY(-8%);
@@ -9,7 +9,7 @@
     pointer-events: none;
 }
 
-.modal-base.on .modal-content {
+.modal-base.on > .modal-content {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
@@ -17,8 +17,18 @@
     -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
     opacity: 1;
 }
+.modal-base.on .modal-content {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+.modal-base.on .modal-content {
+    left: 5px;
+}
 
-.modal-base .modal-overlay {
+.modal-base > .modal-overlay {
+    overflow: auto;
     width: -moz-calc(100vw);
     width: -webkit-calc(100vw);
     width: calc(100vw);
@@ -28,22 +38,36 @@
     background: rgba(0, 0, 0, 0.4);
     position: fixed;
     top: 0px;
-    left:0px;
-    right:0px;
+    left: 0px;
+    right: 0px;
+    padding: 15px;
 }
 
 .modal-content {
-    position: fixed;
-    top: 40px;
+    padding: 5px;
+    overflow: auto;
     min-height: 60px;
     width: 800px;
-    overflow: hidden;
     background: #fff;
     margin: 0 auto;
-    left:0;
-    right:0;
     z-index: 3;
+    margin-bottom: 50px;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    position: relative;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    /* -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5); */
+    /* box-shadow: 0 3px 9px rgba(0,0,0,.5); */
 }
+.modal-content .modal-content {
+    margin: 0;
+}
+
 
 .modal-base{
     position: fixed;
@@ -66,4 +90,10 @@
     -webkit-transition: opacity 0.3s;
     opacity:  1;
 }
+
+.transparent {
+    pointer-event: none;
+    background: none !important;
+}
+
 
