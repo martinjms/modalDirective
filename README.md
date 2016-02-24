@@ -1,20 +1,17 @@
 # modalDirective
-Angular 1.4 modal directive
+pretty simple Angular 1.4 modal directive.
+NO JQuery
+NO Bootstrap
 
 
-Directiva simple de modal con angular
+Use example:
 
-
-
-Ejemplo de uso 
-
-
-
+	//Template
 	<modal modal-id="myModalId" modal-class="myModalClass" config="{overlay:false}">
-		//... contenido
+		//... your content
 	</modal>
 
-	// in controller
+	//Controller
 		modalService.showModal('myModalId');
 
 		modalService.hideModal('myModalId');
